@@ -1,0 +1,10 @@
+cd Test1234
+ cd test124 is from github clone 
+ deploy any changes github documents location of files
+
+ git pull
+
+ gcloud app deploy
+
+ gcloud app browse - provides you with a link 
+

@@ -18,7 +18,7 @@
 import webapp2
 
 form = """
-<form action  = "https://www.google.co.uk/search">
+<form action  = "/testform">
 
  <input name="q">  
 <input type = "submit">
@@ -33,4 +33,5 @@ class MainPage(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([
     ('/', MainPage),
+    ('/testform',TestHandler),
 ], debug=True)

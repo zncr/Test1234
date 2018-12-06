@@ -11,14 +11,15 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+import webtest
 
 import main
 
 
-def test_index():
-    main.app.testing = True
-    client = main.app.test_client()
+def test_get():
+    app = webtest.TestApp(main.app)
 
-    r = client.get('/')
-    assert r.status_code == 200
-    assert 'Hello World' in r.data.decode('utf-8')
+    response = app.get('/')
+
+    assert response.status_int == 200
+    assert response.body == 'Hello, World!'

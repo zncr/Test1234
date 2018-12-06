@@ -38,5 +38,5 @@ class TestHandler(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([
     ('/', MainPage),
-    ('/testform',TestHandler),
-], debug=True)
+    ('/testform',TestHandler)]
+    , debug=True)
